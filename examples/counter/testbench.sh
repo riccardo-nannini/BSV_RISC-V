@@ -12,17 +12,17 @@ Help()
    echo "options:"
    
    echo "f     testbench .bsv source file"
-   echo "m     testbench module name" 
+   echo "m     testbench top-level module name" 
    echo "d     output .vcd file name (default dump.vcd)"
    echo
 
 }
 
-DUMP="dump.vcd"
+DUMP=""
 while getopts ":f:m:d:h" arg; do
   case $arg in
-    f) FILE=$OPTARG;;  #testbench file name
-    m) MODULE=$OPTARG;; #testbench module name
+    f) FILE=$OPTARG;;  #testbench .bsv file name
+    m) MODULE=$OPTARG;; #testbench top-level module name
     d) DUMP=$OPTARG;;
     h) Help
        exit;;
