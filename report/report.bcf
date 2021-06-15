@@ -2182,8 +2182,7 @@
     <bcf:datasource type="file" datatype="bibtex">biblio.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">vantage</bcf:citekey>
-    <bcf:citekey order="2">sandy_slides</bcf:citekey>
+    <bcf:citekey order="1">bsc</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
