@@ -1,0 +1,92 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{bsc}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=e2a92eb4707eda117399806a05714bec}{%
+           family={Compiler},
+           familyi={C\bibinitperiod},
+           given={Bluespec},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{e2a92eb4707eda117399806a05714bec}
+      \strng{fullhash}{e2a92eb4707eda117399806a05714bec}
+      \strng{bibnamehash}{e2a92eb4707eda117399806a05714bec}
+      \strng{authorbibnamehash}{e2a92eb4707eda117399806a05714bec}
+      \strng{authornamehash}{e2a92eb4707eda117399806a05714bec}
+      \strng{authorfullhash}{e2a92eb4707eda117399806a05714bec}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \verb{urlraw}
+      \verb https://github.com/B-Lang-org/bsc
+      \endverb
+      \verb{url}
+      \verb https://github.com/B-Lang-org/bsc
+      \endverb
+    \endentry
+    \entry{risc-v_original}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=1cdbf6b1b2783ec44ba9770f07e6528f}{%
+           family={Waterman},
+           familyi={W\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1a6464ffca8dce3c13915a2dd7bc4841}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Yunsup},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=64f58317379ddd1a24e0e6cba85ae78c}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ab8b3b256286cedf287deca6326c7db0}{%
+           family={Asanovic},
+           familyi={A\bibinitperiod},
+           given={Krste},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{bbdb536115aed621409af18ff2affe53}
+      \strng{fullhash}{82ee1a81cb1e2d92c38001c0f37541d4}
+      \strng{bibnamehash}{bbdb536115aed621409af18ff2affe53}
+      \strng{authorbibnamehash}{bbdb536115aed621409af18ff2affe53}
+      \strng{authornamehash}{bbdb536115aed621409af18ff2affe53}
+      \strng{authorfullhash}{82ee1a81cb1e2d92c38001c0f37541d4}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{05}
+      \field{title}{The RISC-V Instruction Set Manual, Volume I: Base User-Level ISA}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb https://www2.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-62.pdf
+      \endverb
+      \verb{url}
+      \verb https://www2.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-62.pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
