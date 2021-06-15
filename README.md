@@ -7,7 +7,8 @@ Bluespec compilation toolchain (**BSC**) has been recently released as open sour
 The purpose of this project is to investigate the potentiality of its toolchain implementing a multi-stage **RISC-V processor**.<br/>
 
 Keyword: Bluespec, RISC-V, Computer Architectures
-
+<br/><br/>
+**Final report of the project** [here](https://github.com/riccardo-nannini/BSV_RISC-V/blob/main/report/report.pdf)
 ---
 
 ### Requirements to run the examples: 
@@ -15,6 +16,7 @@ Keyword: Bluespec, RISC-V, Computer Architectures
 - [bsc](https://github.com/B-Lang-org/bsc)
 
 ---
+
 
 ### How to run the examples:
 #### Compile into Verilog RTL
