@@ -1,0 +1,79 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{sandy_slides}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=6d3a69bc773b4be3f66d393127b38737}{%
+           family={Lempel},
+           familyi={L\bibinitperiod},
+           given={Oded},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d3a69bc773b4be3f66d393127b38737}
+      \strng{fullhash}{6d3a69bc773b4be3f66d393127b38737}
+      \strng{bibnamehash}{6d3a69bc773b4be3f66d393127b38737}
+      \strng{authorbibnamehash}{6d3a69bc773b4be3f66d393127b38737}
+      \strng{authornamehash}{6d3a69bc773b4be3f66d393127b38737}
+      \strng{authorfullhash}{6d3a69bc773b4be3f66d393127b38737}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{2nd Generation Intel Core Processor Family: Intel Core i7, i5 and i3}
+      \field{year}{2011}
+      \verb{urlraw}
+      \verb http://www.hotchips.org/wp-content/uploads/hc_archives/hc23/HC23.19.9-Desktop-CPUs/HC23.19.911-Sandy-Bridge-Lempel-Intel-Rev\%207.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.hotchips.org/wp-content/uploads/hc_archives/hc23/HC23.19.9-Desktop-CPUs/HC23.19.911-Sandy-Bridge-Lempel-Intel-Rev%5C%207.pdf
+      \endverb
+    \endentry
+    \entry{vantage}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=a2ed106e416f44d8040313df2708f6a9}{%
+           family={Sanchez},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ea87e386461230ec18273b6b4f3d33bc}{%
+           family={Kozyrakis},
+           familyi={K\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c4cfff466e641895731ddc210bda46e}
+      \strng{fullhash}{6c4cfff466e641895731ddc210bda46e}
+      \strng{bibnamehash}{6c4cfff466e641895731ddc210bda46e}
+      \strng{authorbibnamehash}{6c4cfff466e641895731ddc210bda46e}
+      \strng{authornamehash}{6c4cfff466e641895731ddc210bda46e}
+      \strng{authorfullhash}{6c4cfff466e641895731ddc210bda46e}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. of ISCA}
+      \field{title}{{Vantage: Scalable and Efficient Fine-Grain Cache Partitioning}}
+      \field{year}{2011}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

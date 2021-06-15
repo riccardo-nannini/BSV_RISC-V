@@ -1,10 +1,10 @@
 # High Performance Processors and Systems Project 
 
-## Bluespec RISC-V on FPGAs<br/>
+## Bluespec RISC-V processors<br/>
 Abstract:
 Bluespec System Verilog (**BSV**) is a state-of-the-art Hardware Description Language (HDL).<br/>
 Bluespec compilation toolchain (**BSC**) has been recently released as open source. <br/>
-The purpose of this project is to investigate the potentiality of its toolchain implementing a multi-stage **RISC-V processor on an embedded FPGA**.<br/>
+The purpose of this project is to investigate the potentiality of its toolchain implementing a multi-stage **RISC-V processor**.<br/>
 
 Keyword: Bluespec, RISC-V, Computer Architectures
 
