@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  15 JUN 2021 23:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  17 JUN 2021 00:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1054,12 +1054,12 @@ LaTeX Info: Redefining \nameref on input line 55.
 \openout5 = `report.out'.
 
 \c@lstlisting=\count449
-<logo_polimi.png, id=71, 229.02464pt x 71.50659pt>
+<logo_polimi.png, id=75, 229.02464pt x 71.50659pt>
 File: logo_polimi.png Graphic file (type png)
 <use logo_polimi.png>
 Package pdftex.def Info: logo_polimi.png  used on input line 65.
 (pdftex.def)             Requested size: 229.02406pt x 71.5064pt.
-<logo_NECST.png, id=73, 125.56912pt x 63.95895pt>
+<logo_NECST.png, id=77, 125.56912pt x 63.95895pt>
 File: logo_NECST.png Graphic file (type png)
 <use logo_NECST.png>
 Package pdftex.def Info: logo_NECST.png  used on input line 65.
@@ -1089,40 +1089,69 @@ Overfull \hbox (4.1118pt too wide) in paragraph at lines 86--87
  []
 
 [2] [3]
-<risc-v_registers.png, id=118, 401.70074pt x 462.528pt>
+<risc-v_registers.png, id=123, 401.70074pt x 462.528pt>
 File: risc-v_registers.png Graphic file (type png)
 <use risc-v_registers.png>
 Package pdftex.def Info: risc-v_registers.png  used on input line 120.
 (pdftex.def)             Requested size: 321.36102pt x 370.02289pt.
- [4 <./risc-v_registers.png>] [5]
+ [4 <./risc-v_registers.png>]
+<risc-v_encoding.png, id=131, 616.10175pt x 116.8365pt>
+File: risc-v_encoding.png Graphic file (type png)
+<use risc-v_encoding.png>
+Package pdftex.def Info: risc-v_encoding.png  used on input line 134.
+(pdftex.def)             Requested size: 400.4614pt x 75.94281pt.
+
+Overfull \hbox (10.4614pt too wide) in paragraph at lines 134--135
+ [][] 
+ []
+
+<risc-v_format.png, id=133, 656.4525pt x 121.6545pt>
+File: risc-v_format.png Graphic file (type png)
+<use risc-v_format.png>
+Package pdftex.def Info: risc-v_format.png  used on input line 144.
+(pdftex.def)             Requested size: 426.68907pt x 79.07448pt.
+
+Overfull \hbox (36.68907pt too wide) in paragraph at lines 144--145
+ [][] 
+ []
+
+[5 <./risc-v_encoding.png> <./risc-v_format.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+<risc-v_fsr.png, id=144, 678.1335pt x 62.634pt>
+File: risc-v_fsr.png Graphic file (type png)
+<use risc-v_fsr.png>
+Package pdftex.def Info: risc-v_fsr.png  used on input line 160.
+(pdftex.def)             Requested size: 389.92374pt x 36.01425pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+[6 <./risc-v_fsr.png>] [7]
 
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 33.
 See the caption package documentation for explanation.
 
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
+[8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: 7F9B518C2BAD70A148C7178ABEB3B556;603
-(rerunfilecheck)             After:  CF405E3C80103E3BF2447D7E14313FAD;656.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: CF405E3C80103E3BF2447D7E14313FAD;656.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27854 strings out of 483183
- 533373 string characters out of 5966292
- 1137739 words of memory out of 5000000
- 42413 multiletter control sequences out of 15000+600000
+ 27891 strings out of 483183
+ 534073 string characters out of 5966292
+ 1138089 words of memory out of 5000000
+ 42444 multiletter control sequences out of 15000+600000
  540700 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,7n,96p,814b,1255s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1134,10 +1163,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on report.pdf (7 pages, 192145 bytes).
+Output written on report.pdf (9 pages, 258922 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 29 named destinations out of 1000 (max. 500000)
+ 227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

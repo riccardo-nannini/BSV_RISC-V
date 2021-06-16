@@ -1,6 +1,6 @@
 \documentclass[12pt,oneside,a4paper]{article}
 
-\usepackage[backend=biber,style=numeric]{biblatex}
+\usepackage[backend=biber,style=numeric, sorting=none]{biblatex}
 \usepackage{xcolor}
 \usepackage{todonotes}
 \usepackage{amsmath}
@@ -113,7 +113,7 @@ In order to achieve these goals many design choices were taken, sometimes in lin
 \subsection{Main features}
 RISC-V has 2 base variants, \textbf{RV32} and \textbf{RV64}, providing 32-bit or 64-bit user-level address spaces respectively. A 128-bit extension is available but mostly aimed at the future of warehouse scale computing.
 \subsubsection{Registers}
-RISC-V uses 31 general-purpose registers  {\fontfamily{cmtt}\selectfont{x1-x31}} with  {\fontfamily{cmtt}\selectfont{x0}} hardwired to the costant 0. Moreover, 32 64-bit registers {\fontfamily{cmtt}\selectfont{f0-f31}} holding single or double-precision floating-point values are available as shown in \cref{riscv:registers}
+RISC-V uses 31 general-purpose registers  {\fontfamily{cmtt}\selectfont{x1-x31}} with  {\fontfamily{cmtt}\selectfont{x0}} hardwired to the costant 0. Moreover, 32 64-bit registers {\fontfamily{cmtt}\selectfont{f0-f31}} holding single or double-precision floating-point values are available as shown in \cref{riscv:registers}.
 
 \begin{figure}[h]
 	\centering
@@ -124,8 +124,64 @@ RISC-V uses 31 general-purpose registers  {\fontfamily{cmtt}\selectfont{x1-x31}}
 
 There are also two special registers: the \textit{program counter} {\fontfamily{cmtt}\selectfont{pc}} holds the address of the current instruction while the \textit{floating point status register} {\fontfamily{cmtt}\selectfont{fsr}} contains the operating mode and exception status of the floating-point unit.
 \subsubsection{Instruction encoding}
+In addition to standard fixed-length 32-bit instructions, RISC-V supports extensions with \textbf{variable-length} ones too, useful in reducing code size specially for specific domains like embedded systems.
+
+\cref{riscv:encoding} shows the instruction length encoding convention. 32-bit instructions have the 2 least significant bits always set to {\fontfamily{cmtt}\selectfont{1}} while the 16-bit ones must have said bits in any combination but {\fontfamily{cmtt}\selectfont{11}}.
+Instructions longer than 32-bits have additional lower bits set to {\fontfamily{cmtt}\selectfont{1}}.\medskip
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.65]{risc-v_encoding}
+	\caption{RISC-V instruction encoding}
+	\label{riscv:encoding}
+\end{figure}
+
 \subsubsection{Instruction format}
+Six basic instruction formats are present in the base version of the ISA as shown in \cref{riscv:format}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.65]{risc-v_format}
+	\caption{RISC-V instruction formats}
+	\label{riscv:format}
+\end{figure}
+
+It is worth noting a particular design choice made by the authors. Since, as they state, the \textit{decoding} of register specifiers is usually on the \textbf{critical path} in implementations, they decided to keep all register specifiers in the same position across every instruction type. This comes with the tradeoff of having some instructions with an immediate value that has to be split in two parts.
+
+\textbf{R-Type} instructions are for operations with two source registers (\textit{rs1} and \textit{rs2}) while \textbf{R4-Type} format is for special three source register floating point instructions. Moreover, \textbf{I-Type} format is for operations between a source register (\textit{rs1}) and an 12-bit sign-extended immediate, while \textbf{B-Type} instructions are designed for conditional branches (where the branch type is specified in \textit{funct3}).
+The LUI (\textit{Load upper immediate}) operation, generally used to build 32-bit constants, is the typical instruction specified by the \textbf{L-Type}, meanwhile \textbf{J-Type} instructions encode a 25-bit target address as a PC-relative offset.
+
+Describing in details the specification of every instruction is way out of the focus of this report and is already done with great details in the original paper \cite{risc-v_original}.\\
+
+In the end, just a mention to the \textit{fsr}, a special register containing the status of floating-point operation, shown in \cref{riscv:fsr}.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.575]{risc-v_fsr}
+	\caption{Floating-point status register}
+	\label{riscv:fsr}
+\end{figure}
+
+It makes possible to specify the rounding mode with a specific encoding as well as reading the status of the previous floating-point operation in the flag bits.
 \subsection{License}
+Until here the main features of RISC-V were summarized.
+Despite being a really well designed standard, this by itself does not explain the popularity of this ISA.
+
+In fact, one of the main factor of his success is that RISC-V is provided under a \textbf{free open source} license that does not require fees to use.
+
+This is quite unusual in the instruction set architectures world, that for a great majority are \textit{proprietary} due to historical or business reasons. Companies like ARM, IBM and Intel have patents on their ISAs which prevent others from using them without licenses.
+
+Negotiations for said licenses can take 6-24 months and can cost up to \$1M-\$10M, ruling out academia and other with small volumes. An ARM license, for instance, doesn't even let you design an ARM core; you just get to you \textit{their} designs \cite{risc-v_free}.
+
+Some open-source ISA already existed but were not as popular and well designed as RISC-V is.\\
+
+The birth of this standard enabled a \textbf{real free open market} of processor designs leading to:
+\begin{itemize}
+	\item greater innovation via \textbf{free-market competition}
+	\item shared open core designs
+	\item processors becoming \textbf{affordable} for more devices
+\end{itemize}
+
 \section{BSV}
 \section{Processor designs}
 \newpage

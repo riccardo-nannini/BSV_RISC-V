@@ -18,7 +18,7 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
+  \datalist[entry]{none/global//global/global}
     \entry{bsc}{misc}{}
       \name{author}{1}{}{%
         {{hash=e2a92eb4707eda117399806a05714bec}{%
@@ -33,8 +33,8 @@
       \strng{authorbibnamehash}{e2a92eb4707eda117399806a05714bec}
       \strng{authornamehash}{e2a92eb4707eda117399806a05714bec}
       \strng{authorfullhash}{e2a92eb4707eda117399806a05714bec}
-      \field{sortinit}{C}
-      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \verb{urlraw}
       \verb https://github.com/B-Lang-org/bsc
@@ -72,8 +72,8 @@
       \strng{authorbibnamehash}{bbdb536115aed621409af18ff2affe53}
       \strng{authornamehash}{bbdb536115aed621409af18ff2affe53}
       \strng{authorfullhash}{82ee1a81cb1e2d92c38001c0f37541d4}
-      \field{sortinit}{W}
-      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{05}
@@ -84,6 +84,39 @@
       \endverb
       \verb{url}
       \verb https://www2.eecs.berkeley.edu/Pubs/TechRpts/2011/EECS-2011-62.pdf
+      \endverb
+    \endentry
+    \entry{risc-v_free}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=64f58317379ddd1a24e0e6cba85ae78c}{%
+           family={Patterson},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ab8b3b256286cedf287deca6326c7db0}{%
+           family={Asanovic},
+           familyi={A\bibinitperiod},
+           given={Krste},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{63c36d46d02cdb6608a22ee2422180d6}
+      \strng{fullhash}{63c36d46d02cdb6608a22ee2422180d6}
+      \strng{bibnamehash}{63c36d46d02cdb6608a22ee2422180d6}
+      \strng{authorbibnamehash}{63c36d46d02cdb6608a22ee2422180d6}
+      \strng{authornamehash}{63c36d46d02cdb6608a22ee2422180d6}
+      \strng{authorfullhash}{63c36d46d02cdb6608a22ee2422180d6}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{08}
+      \field{title}{Instruction Sets Should Be Free: The Case For RISC-V}
+      \field{year}{2014}
+      \verb{urlraw}
+      \verb http://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-146.pdf
+      \endverb
+      \verb{url}
+      \verb http://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-146.pdf
       \endverb
     \endentry
   \enddatalist
