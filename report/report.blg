@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'report.blg'
-[62] biber:322> INFO - === gio giu 17, 2021, 00:25:51
-[73] Biber.pm:415> INFO - Reading 'report.bcf'
-[126] Biber.pm:943> INFO - Found 3 citekeys in bib section 0
-[138] Biber.pm:4256> INFO - Processing section 0
-[138] Utils.pm:75> INFO - Globbing data source 'biblio.bib'
-[139] Utils.pm:91> INFO - Globbed data source 'biblio.bib' to biblio.bib
-[148] Biber.pm:4455> INFO - Looking for bibtex format file 'biblio.bib' for section 0
-[149] bibtex.pm:1653> INFO - LaTeX decoding ...
-[153] bibtex.pm:1471> INFO - Found BibTeX data source 'biblio.bib'
-[188] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[188] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[188] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[188] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[194] bbl.pm:652> INFO - Writing 'report.bbl' with encoding 'UTF-8'
-[196] bbl.pm:755> INFO - Output to report.bbl
+[66] biber:322> INFO - === sab giu 19, 2021, 12:12:02
+[78] Biber.pm:415> INFO - Reading 'report.bcf'
+[132] Biber.pm:943> INFO - Found 4 citekeys in bib section 0
+[143] Biber.pm:4256> INFO - Processing section 0
+[143] Utils.pm:75> INFO - Globbing data source 'biblio.bib'
+[144] Utils.pm:91> INFO - Globbed data source 'biblio.bib' to biblio.bib
+[153] Biber.pm:4455> INFO - Looking for bibtex format file 'biblio.bib' for section 0
+[154] bibtex.pm:1653> INFO - LaTeX decoding ...
+[159] bibtex.pm:1471> INFO - Found BibTeX data source 'biblio.bib'
+[203] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[203] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[203] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[203] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[209] bbl.pm:652> INFO - Writing 'report.bbl' with encoding 'UTF-8'
+[211] bbl.pm:755> INFO - Output to report.bbl

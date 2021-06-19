@@ -119,6 +119,33 @@
       \verb http://www2.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-146.pdf
       \endverb
     \endentry
+    \entry{bsv_guide}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=92f2255f84c3a253f04018fb61984bd4}{%
+           family={Inc},
+           familyi={I\bibinitperiod},
+           given={Bluespec},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{92f2255f84c3a253f04018fb61984bd4}
+      \strng{fullhash}{92f2255f84c3a253f04018fb61984bd4}
+      \strng{bibnamehash}{92f2255f84c3a253f04018fb61984bd4}
+      \strng{authorbibnamehash}{92f2255f84c3a253f04018fb61984bd4}
+      \strng{authornamehash}{92f2255f84c3a253f04018fb61984bd4}
+      \strng{authorfullhash}{92f2255f84c3a253f04018fb61984bd4}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bluespec(TM) System Verilog Reference Guide}
+      \field{year}{2008}
+      \verb{urlraw}
+      \verb http://csg.csail.mit.edu/6.S078/6_S078_2012_www/resources/reference-guide.pdf
+      \endverb
+      \verb{url}
+      \verb http://csg.csail.mit.edu/6.S078/6_S078_2012_www/resources/reference-guide.pdf
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

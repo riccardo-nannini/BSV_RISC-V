@@ -9,25 +9,46 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{listings}
+
+\lstdefinestyle{bsvstyle}{
+	backgroundcolor=\color{backcolour},   
+	numberstyle=\tiny\color{codegray},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstdefinelanguage{BSV}{
+	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, globaldata, procesure, AND},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={class, export, boolean, throw, implements, import, this},
+	ndkeywordstyle=\color{darkgray}\bfseries,
+	identifierstyle=\color{black},
+	sensitive=false,
+	comment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	commentstyle=\color{purple}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,7,0.82}
+\definecolor{backcolour}{RGB}{232, 232, 232}
+
 \lstset{
-	frame=top,frame=bottom,
-	language=C,
-	basicstyle=\small\normalfont,
-	xleftmargin=\parindent,
-	keywordstyle=\color{green!40!black},
-	%  commentstyle=\itshape\color{purple!40!black},
-	%  identifierstyle=\color{blue},
-	%  stringstyle=\color{orange},
-	morekeywords={in, globaldata, procedure, input, output, behavior, end, XOR, NOT, AND}, % keyword to highlight
-	%  captionpos=t,
-	tabsize=2,
-	numbers=left,
-	stepnumber=1,                   % the step between two line-numbers.        
-	numbersep=5pt,
-	framexleftmargin=10pt,
-	title=\lstname,
-	captionpos=t,
-	showspaces=false,
+	language=BSV,
+	style=bsvstyle
 }
 \DeclareCaptionFormat{listing}{\rule{\dimexpr\textwidth\relax}{0.4pt}\par\vskip1pt#1#2#3}
 \captionsetup[lstlisting]{format=listing,singlelinecheck=false, margin=0pt,labelsep=space,labelfont=bf}
@@ -73,15 +94,6 @@ Bluespec System Verilog (\textbf{BSV}) is a state-of-the-art Hardware Descriptio
 Bluespec compilation toolchain (\textbf{BSC}) has been recently released as open source \cite{bsc}. The goal of the project was investigating the potentiality of said toolchain implementing different \textbf{RISC-V} processors of increasing complexity.\\
 \end{abstract}
 
-\section{Introduction} \label{sec:intro}
-
-This report covers chronologically the path that I have followed during the development of this project.
- 
-It starts from a quick overview on the \textit{RISC-V} ISA, focused on the key ingredients that make this ISA one of the most trend topics in Computer Engineering.
-
-It proceeds with the analysis of the \textit{Bluespec System Verilog} language, outlining its novelties with respect to other hardware description languages, as well as its main features and capabilities. 
-
-The last section is devoted to the development of various RISC-V processor designs, describing in details the characteristics of each processor and motivating the various design choices, starting from a one cycle non pipelined processor and ending with a 6 stage pipelined one enriched with multiple branch predictors. 
 
 
 \section{RISC-V} \label{sec:sec1}
@@ -117,13 +129,8 @@ end procedure
 \end{lstlisting}
 
 \subsection{Subsection 1} \label{sec:sub1}
-This is the way to refer to \cref{fig:example}, and similarly for \cref{sec:sec1}.
-\begin{figure}
-	\centering
-	\includegraphics[width=.7\textwidth]{example.jpg}
-	\caption{Example caption.}
-	\label{fig:example}
-\end{figure}
+This is the way to refer to , and similarly for \cref{sec:sec1}.
+
 You will notice \LaTeX~ freely moves elements like figures and tables around the page, and often in the pages around the current paragraph. In particular, \LaTeX~ always places these elements at the bottom or top of the page (otherwise instructed): this choice obeys to the main typesetting guidelines, and should work well most of the times. You should not force a specific position for these elements, and keep in mind that \textit{\LaTeX~ most of the time is right} (it is its job to do lay out elements, not yours). If you need to move an element, move its \LaTeX~ code up or down.
 
 \subsection{Subsection 2} \label{sec:sub2}
