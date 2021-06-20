@@ -33,3 +33,19 @@
 \contentsline {subsubsection}{\numberline {3.1.5}Dynamic semantic}{8}{subsubsection.3.1.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Processor designs}{8}{section.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1}Starting point}{9}{subsection.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.2}Two cycles}{9}{subsection.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.3}Four cycles}{10}{subsection.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.4}Two-stage pipelined}{11}{subsection.4.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.4.1}Next address prediction}{12}{subsubsection.4.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.5}Six stage pipelined}{13}{subsection.4.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.5.1}BHT}{14}{subsubsection.4.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.5.2}RAS}{14}{subsubsection.4.5.2}%

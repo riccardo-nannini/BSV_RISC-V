@@ -2188,6 +2188,7 @@
     <bcf:citekey order="4">risc-v_original</bcf:citekey>
     <bcf:citekey order="5">risc-v_free</bcf:citekey>
     <bcf:citekey order="6">bsv_guide</bcf:citekey>
+    <bcf:citekey order="7">connectal</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

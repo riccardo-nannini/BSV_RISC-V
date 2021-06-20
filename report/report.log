@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  19 JUN 2021 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  21 JUN 2021 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,6 +974,12 @@ LaTeX Warning: Label `bsv:paramtype' multiply defined.
 
 LaTeX Warning: Label `bsv:paramtype@cref' multiply defined.
 
+
+LaTeX Warning: Label `fourcyclecode' multiply defined.
+
+
+LaTeX Warning: Label `fourcyclecode@cref' multiply defined.
+
 )
 \openout1 = `report.aux'.
 
@@ -1108,12 +1114,12 @@ LaTeX Info: Redefining \nameref on input line 78.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo_polimi.png, id=99, 229.02464pt x 71.50659pt>
+<logo_polimi.png, id=131, 229.02464pt x 71.50659pt>
 File: logo_polimi.png Graphic file (type png)
 <use logo_polimi.png>
 Package pdftex.def Info: logo_polimi.png  used on input line 88.
 (pdftex.def)             Requested size: 229.02406pt x 71.5064pt.
-<logo_NECST.png, id=101, 125.56912pt x 63.95895pt>
+<logo_NECST.png, id=133, 125.56912pt x 63.95895pt>
 File: logo_NECST.png Graphic file (type png)
 <use logo_NECST.png>
 Package pdftex.def Info: logo_NECST.png  used on input line 88.
@@ -1137,12 +1143,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
  []
 
 [2] [3]
-<risc-v_encoding.png, id=153, 616.10175pt x 116.8365pt>
+<risc-v_encoding.png, id=194, 616.10175pt x 116.8365pt>
 File: risc-v_encoding.png Graphic file (type png)
 <use risc-v_encoding.png>
 Package pdftex.def Info: risc-v_encoding.png  used on input line 146.
 (pdftex.def)             Requested size: 400.4614pt x 75.94281pt.
-<risc-v_format.png, id=155, 656.4525pt x 121.6545pt>
+<risc-v_format.png, id=196, 656.4525pt x 121.6545pt>
 File: risc-v_format.png Graphic file (type png)
 <use risc-v_format.png>
 Package pdftex.def Info: risc-v_format.png  used on input line 156.
@@ -1157,7 +1163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-<risc-v_fsr.png, id=158, 678.1335pt x 62.634pt>
+<risc-v_fsr.png, id=199, 678.1335pt x 62.634pt>
 File: risc-v_fsr.png Graphic file (type png)
 <use risc-v_fsr.png>
 Package pdftex.def Info: risc-v_fsr.png  used on input line 172.
@@ -1189,14 +1195,74 @@ Overfull \hbox (3.43155pt too wide) in paragraph at lines 272--273
  stan-dard or user-defined)in the form of \OT1/cmtt/m/n/12 X#(t$[]$,...,
  []
 
-[7] [8] [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 311.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 311.
+[7] [8]
+<infrastructure.png, id=283, 827.09pt x 430.60875pt>
+File: infrastructure.png Graphic file (type png)
+<use infrastructure.png>
+Package pdftex.def Info: infrastructure.png  used on input line 319.
+(pdftex.def)             Requested size: 330.83012pt x 172.24043pt.
+<onecycle.png, id=285, 420.6114pt x 233.4321pt>
+File: onecycle.png Graphic file (type png)
+<use onecycle.png>
+Package pdftex.def Info: onecycle.png  used on input line 331.
+(pdftex.def)             Requested size: 315.45778pt x 175.07364pt.
+ [9 <./infrastructure.png> <./OneCycle.png>]
+<twocycle.png, id=296, 434.3427pt x 233.4321pt>
+File: twocycle.png Graphic file (type png)
+<use twocycle.png>
+Package pdftex.def Info: twocycle.png  used on input line 345.
+(pdftex.def)             Requested size: 347.47464pt x 186.74593pt.
+ [10 <./TwoCycle.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
+
+ []
+
+[11]
+<twoStage.png, id=351, 433.62pt x 233.4321pt>
+File: twoStage.png Graphic file (type png)
+<use twoStage.png>
+Package pdftex.def Info: twoStage.png  used on input line 418.
+(pdftex.def)             Requested size: 390.2544pt x 210.08693pt.
+<predbtb.png, id=353, 606.265pt x 341.275pt>
+File: predbtb.png Graphic file (type png)
+<use predbtb.png>
+Package pdftex.def Info: predbtb.png  used on input line 429.
+(pdftex.def)             Requested size: 424.3826pt x 238.89085pt.
+
+Overfull \hbox (22.00458pt too wide) in paragraph at lines 429--430
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12 <./twoStage.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+[13 <./predbtb.png>]
+<predbhb.png, id=380, 606.265pt x 341.275pt>
+File: predbhb.png Graphic file (type png)
+<use predbhb.png>
+Package pdftex.def Info: predbhb.png  used on input line 482.
+(pdftex.def)             Requested size: 424.3826pt x 238.89085pt.
+
+Overfull \hbox (22.00458pt too wide) in paragraph at lines 482--483
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14] [15 <./predbhb.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 497.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 497.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 311.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 311.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 497.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 497.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: EE1611064B221D9CB8D75E879052CF79;1092.
+(rerunfilecheck)             Checksum: B0D1407D841146C028FE765D69443D82;1624.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1206,13 +1272,13 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28704 strings out of 483183
- 543670 string characters out of 5966292
- 1202086 words of memory out of 5000000
- 43207 multiletter control sequences out of 15000+600000
+ 28880 strings out of 483183
+ 546166 string characters out of 5966292
+ 1204955 words of memory out of 5000000
+ 43298 multiletter control sequences out of 15000+600000
  541036 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,7n,96p,814b,1270s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,7n,96p,814b,1934s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/riccardo/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.
 600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/
@@ -1224,10 +1290,10 @@ nts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt8.pfb>
-Output written on report.pdf (10 pages, 263319 bytes).
+Output written on report.pdf (16 pages, 571049 bytes).
 PDF statistics:
- 310 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 78 named destinations out of 1000 (max. 500000)
- 270 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 480 PDF objects out of 1000 (max. 8388607)
+ 407 compressed objects within 5 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 364 words of extra memory for PDF output out of 10000 (max. 10000000)
 

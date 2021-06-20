@@ -15,3 +15,11 @@
 \BOOKMARK [3][-]{subsubsection.3.1.4}{Rules}{subsection.3.1}% 15
 \BOOKMARK [3][-]{subsubsection.3.1.5}{Dynamic semantic}{subsection.3.1}% 16
 \BOOKMARK [1][-]{section.4}{Processor designs}{}% 17
+\BOOKMARK [2][-]{subsection.4.1}{Starting point}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.2}{Two cycles}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Four cycles}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.4}{Two-stage pipelined}{section.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Next address prediction}{subsection.4.4}% 22
+\BOOKMARK [2][-]{subsection.4.5}{Six stage pipelined}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.5.1}{BHT}{subsection.4.5}% 24
+\BOOKMARK [3][-]{subsubsection.4.5.2}{RAS}{subsection.4.5}% 25

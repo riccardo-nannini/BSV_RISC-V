@@ -28,7 +28,7 @@
 }
 
 \lstdefinelanguage{BSV}{
-	keywords={rule, Vector, int, String, Reg, Bit, begin, end, endrule, method, endmethod, Action, interface, endinterface, module, endmodule, Reg\#, Bool, let, True, False},
+	keywords={rule, Vector,typedef, enum, int, String, Reg, Bit, begin, end, endrule, method, endmethod, Action, interface, endinterface, module, endmodule, Reg\#, Bool, let, True, False},
 	keywordstyle=\color{codeblue}\bfseries,
 	ndkeywords={import, if, else, return, deriving},
 	ndkeywordstyle=\color{codepurple}\bfseries,
@@ -195,7 +195,7 @@ The birth of this standard enabled a \textbf{real free open market} of processor
 \end{itemize}
 
 \section{BSV}
-The hardware description language used to implement the RISC-V processor is \textbf{Bluespec System Verilog} (BSV).
+The hardware description language used to implement the RISC-V processors within the project is \textbf{Bluespec System Verilog} (BSV).
 
 Belonging to Bluespec Inc, co-founded in 2003 by MIT professor Arvind, the BSV language is aimed at providing hardware designers used to Verilog, VHDL or System Verilog, a \textbf{high level} language for hardware design and synthesis.
 
@@ -305,7 +305,193 @@ Since only one rule is executed at each step, we have only to look at each rule 
 The BSC compiler maps BSV into efficient parallel clocked synchronous hardware. In particular, the mapping allows multiple rules to be executed at each clock cycle. The compiler is able do to this by producing a \textbf{role-control circuit} which takes all the enabled conditions and possible data outputs (actions) and feeds them into a \textbf{scheduler} circuit. It is the scheduler duty, at each clock cycle, to select a subset of conflict-free rules to fire.
 
 \section{Processor designs}
-\newpage
+
+This section is devoted to the processor designs created within this project.
+
+After studying the RISC-V ISA and getting to know the BSV language, it was the point to get my hands dirty and creating a variety of processor designs.
+
+Every design, among other things like BSV working examples I have made as an exercise, is available in the GitHub repository \url{https://github.com/riccardo-nannini/BSV_RISC-V}.
+\subsection{Starting point}
+I was provided with an initial setup comprising a processor infrastructure (\cref{infrastructure}) based on Connectal \cite{connectal}, some test benches, and an initial simple one cycle implementation of a RISC-V processor.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{infrastructure.png}
+	\caption{Processor infrastructure with control signals}
+	\label{infrastructure}
+\end{figure}
+
+\cref{onecycle} shows the structure of the initial one cycle processor. 
+
+Starting from here, I developed more realistic processors of increasing complexity. 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.75]{onecycle.png}
+	\caption{One cycle processor architecture}
+	\label{onecycle}
+\end{figure}
+
+\subsection{Two cycles}
+The one cycle processor is able to operate in a single cycle because it has \textbf{separate} instruction and data memory; my first design was aimed at creating a more realistic architecture, based on the von Neumann model, with a single memory accessible only once per clock cycle.
+
+This indeed creates a structural hazard, solved by splitting the instruction execution in \textbf{two cycles}: one for fetching the instruction and one for decoding/executing the instruction and access the memory.
+
+In order to achieve this, an intermediate register ({\fontfamily{cmtt}\selectfont{f2d}}) has to hold the data that a state has to pass to the following one (in this case the fetched instruction).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.8]{twocycle.png}
+	\caption{Two cycles processor architecture}
+	\label{twocycle}
+\end{figure}
+
+\begin{lstlisting}[label={twocyclecode},caption={Two cycle processor simplified code}]
+typedef enum {
+	Fetch, Execute
+} State;
+
+Reg#(State) state <- mkRegU;
+
+rule doFetch(state == Fetch);      
+	f2d <= mem.req(pc);		//fetch instruction
+	state <= Execute;			//pass to the execute state
+endrule
+
+rule doExecute(state == Execute);
+	let instruction = f2d;
+	//... decode, execute, memory and writeback
+	state <= Fetch;	
+endrule
+\end{lstlisting}
+
+\subsection{Four cycles}
+Another unrealistic assumption I had to get rid of was that, since now, memory access was treated as \textit{combinational}. The processor had only to set some input lines to the memory and receive an answer in the same cycle. Most real memories have reads with \textbf{longer latencies}: first you set the address bits and then the result is ready in the next clock cycle.
+
+This structural hazard is avoided by further splitting the processor into \textbf{4 cycles}:
+\begin{itemize}
+	\item the \textit{instruction fetch} stage sets the address lines on the memory to read the current instruction.
+	\item the \textit{instruction decode} stage reads the instruction from memory, decodes it and reads the registers.
+	\item the \textit{execute} stage performs ALU operations, writes data to memory and sets up address lines for load instructions.
+	\item the \textit{write back} stage reads the result from memory (if any) and writes the register file.
+\end{itemize}
+
+\begin{lstlisting}[label={fourcyclecode},caption={Four cycle processor simplified code}]
+typedef enum {
+Fetch, Decode, Execute, WriteBack
+} State;
+
+Reg#(State) state <- mkRegU;
+
+rule doFetch(state == Fetch);      
+	mem.req(pc);			//requests the instruction
+	state <= Decode;	//pass to the decode state
+endrule
+
+rule doDecode(state == Decode);
+	DecodedInst dInst = decode(mem.resp());
+	//... reads from registers
+	state <= Execute;
+endrule
+
+rule doExecute(state == Execute);
+	//performs ALU operation and request data if load instruction
+	state <= WriteBack;
+endrule
+
+rule doWriteBack(state == WriteBack);
+	//reads from memory if load and writes back to registers
+	state <= Fetch;
+endrule
+\end{lstlisting}
+
+\subsection{Two-stage pipelined}
+In the above-described designs, when the processor was in a particular state, the rest of the hardware remained unused. A \textbf{pipeline} approach is aimed at improving performance by parallelizing instructions execution. This, however, brings up \textbf{data} and \textbf{control hazards} that we ignored up to now. In order to make a step at the time, I started with a \textbf{two-stage pipelined} processor (bringing back the good old unrealistic combinational reads) that rules out data hazards (read registers, execution and write-back done in the same clock cycle).\\
+
+While the stage structure is similar to the two clock design (fetch/decode in one stage, execute/memory/writeback in the second), we need some form of \textbf{next instruction prediction} (the fetch stage has to fetch the instruction before the previous one has terminated) and a way to kill wrong path instructions in case of a \textbf{misprediction}.
+
+This can be achieved by using a  {\fontfamily{cmtt}\selectfont{FIFO}} queue as an intermediate register between the stages and, in case of a misprediction, clear said  {\fontfamily{cmtt}\selectfont{FIFO}} (as it contains a wrong-path instruction) and redirect the {\fontfamily{cmtt}\selectfont{pc}} with the correct address. This pc-overwriting action is possible due to  {\fontfamily{cmtt}\selectfont{EHR}} (\textit{Ephemeral History Register}), an hardware structure that allows to have multiple write with different 'priorities'.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.9]{twoStage.png}
+	\caption{Two stage pipelined processor architecture}
+	\label{twostage}
+\end{figure}
+\subsubsection{Next address prediction}
+The next instruction prediction can be carried out in multiple ways. At first I used a simple {\fontfamily{cmtt}\selectfont{pc+4}} as a predictor for this design and then replaced it in a second moment with a {\fontfamily{cmtt}\selectfont{BTB}} (\textit{Branch Target Buffer}), a cache storing the target address for the next instruction after a branch. In the fetch stage the  {\fontfamily{cmtt}\selectfont{BTB}} is accessed using the n lowest bit of the current pc as an index to the cache. If an entry for the  {\fontfamily{cmtt}\selectfont{pc}} is present it is selected as the next  {\fontfamily{cmtt}\selectfont{pc}}, otherwise {\fontfamily{cmtt}\selectfont{pc+4}} is chosen.
+
+\cref{btbbench} shows the different performance of the design when using a {\fontfamily{cmtt}\selectfont{BTB}} with respect to a plain pc + 4 predictor.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{predbtb}
+	\caption{CPI comparison with different benchmarks}
+	\label{btbbench}
+\end{figure}
+
+\subsection{Six stage pipelined}
+For the last design I have implemented a six stage pipelined processor, getting rid of combinational reads of the two stage one.
+
+This, however, creates the possibility of having data hazards. Since the execution will be in-order, the only hazard we should take care of are \textbf{RAW} (Read After Write); an instruction might read a register that would have been written by a previous instruction that has not committed yet.\\
+
+In this design I solved this type of conflict using \textbf{Scoreboard}. 
+Scoreboard is a data structure for \textit{centralized hazard management} that keeps track of the registers currently involved in the pipelined instructions. 
+
+Every instruction goes through the {\fontfamily{cmtt}\selectfont{scoreboard}}: if no conflict are found the instruction proceeds in the pipeline and the used registers are saved in the  {\fontfamily{cmtt}\selectfont{scoreboard}}; if a conflict is found, the instruction stalls.
+
+\begin{lstlisting}[label={fourcyclecode},caption={Scoreboard integration in the pipeline}]
+Scoreboard#(10)   sb <- mkCFScoreboard;
+
+rule doRegisterFetch();      
+	if (!sb.search1(inst.src1) && !sb.search2(inst.src2))	
+	//search if the operand register are present in the scoreboard
+		begin	sb.insert(inst.dst);	
+		//...
+		end
+	else
+		// STALL
+endrule
+
+rule doWriteBack();
+	sb.remove		//removes the instruction from scoreboard
+endrule
+\end{lstlisting}
+
+The six stage pipeline is divided in the following stages:
+\begin{itemize}
+	\item \textbf{Instruction fetch}: requests instruction from memory and updates PC using the BTB.
+	\item \textbf{Decode}: receives instruction from memory and decodes it.
+	\item \textbf{Register fetch}: reads from register file.
+	\item \textbf{Execute}: executes the instruction and corrects mispredictions.
+	\item \textbf{Memory}: sends memory requests for load/store.
+	\item \textbf{Write back}: receive responses and writes to register file.
+\end{itemize}
+The processor needs an intermediate {\fontfamily{cmtt}\selectfont{FIFO}} queue between each stage carrying the necessary information forward.
+
+\subsubsection{BHT}
+In order to further improve branch prediction I have implemented and integrated a \textbf{2-bit BHT} (\textit{Branch History Table}). It is a table with 2 bits for each entry that are updated based the previous behavior of the branch. By checking said bits, the {\fontfamily{cmtt}\selectfont{BHT}} predicts whether to take or not the branch.
+
+The {\fontfamily{cmtt}\selectfont{BHT}} is accessed in the decode stage (we need to know that the instruction is a branch in order to use the table) and redirects the {\fontfamily{cmtt}\selectfont{pc}}, killing wrong-path instructions, in case the prediction of the {\fontfamily{cmtt}\selectfont{BTB}} was not in line with the decision of the {\fontfamily{cmtt}\selectfont{BHT}}.
+
+\cref{bhtbench} shows how the number of clock cycles per instruction changes in different benchmarks when using the {\fontfamily{cmtt}\selectfont{BHT}} or not.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{predbhb}
+	\caption{CPI comparison with different benchmarks}
+	\label{bhtbench}
+\end{figure}
+
+\subsubsection{RAS}
+
+As the last improvement to branch predictions I have implemented a \textbf{RAS}. The {\fontfamily{cmtt}\selectfont{Return Address Stack}} is a predictor aimed at improving \textit{Jump register} instructions ({\fontfamily{cmtt}\selectfont{JALR}} and {\fontfamily{cmtt}\selectfont{JAL}}). According to the RISC-V specification, this two types of unconditional jumps save the address of the instruction following the jump ({\fontfamily{cmtt}\selectfont{pc+4}}) in register x1 ({\fontfamily{cmtt}\selectfont{JAL}}) or in  register \textit{rd} specified in the instruction ({\fontfamily{cmtt}\selectfont{JALR}}). Most {\fontfamily{cmtt}\selectfont{JAL}} and {\fontfamily{cmtt}\selectfont{JALR}} instructions found in programs are used to call or return from functions.
+
+The {\fontfamily{cmtt}\selectfont{RAS}}, implemented along with {\fontfamily{cmtt}\selectfont{BHT}} in the decode stage, works is by maintain a stack, pushing return addresses when a jump calling a routine is found and popping said addresses when another jump instruction returning from a function is detected. Depending on the frequency of jumps in a program, this predictor might slightly improve performances. 
+
+
+
 \printbibliography
 
 \end{document}

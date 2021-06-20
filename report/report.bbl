@@ -146,6 +146,28 @@
       \verb http://csg.csail.mit.edu/6.S078/6_S078_2012_www/resources/reference-guide.pdf
       \endverb
     \endentry
+    \entry{connectal}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=60af6ebd724f46fe16c6992637528b61}{%
+           family={Connectal},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{60af6ebd724f46fe16c6992637528b61}
+      \strng{fullhash}{60af6ebd724f46fe16c6992637528b61}
+      \strng{bibnamehash}{60af6ebd724f46fe16c6992637528b61}
+      \strng{authorbibnamehash}{60af6ebd724f46fe16c6992637528b61}
+      \strng{authornamehash}{60af6ebd724f46fe16c6992637528b61}
+      \strng{authorfullhash}{60af6ebd724f46fe16c6992637528b61}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \verb{urlraw}
+      \verb https://www.connectal.org/
+      \endverb
+      \verb{url}
+      \verb https://www.connectal.org/
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
