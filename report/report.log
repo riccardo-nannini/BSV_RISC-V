@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  21 JUN 2021 00:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.5.11)  21 JUN 2021 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,12 +1143,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 95--97
  []
 
 [2] [3]
-<risc-v_encoding.png, id=194, 616.10175pt x 116.8365pt>
+<risc-v_encoding.png, id=195, 616.10175pt x 116.8365pt>
 File: risc-v_encoding.png Graphic file (type png)
 <use risc-v_encoding.png>
 Package pdftex.def Info: risc-v_encoding.png  used on input line 146.
 (pdftex.def)             Requested size: 400.4614pt x 75.94281pt.
-<risc-v_format.png, id=196, 656.4525pt x 121.6545pt>
+<risc-v_format.png, id=197, 656.4525pt x 121.6545pt>
 File: risc-v_format.png Graphic file (type png)
 <use risc-v_format.png>
 Package pdftex.def Info: risc-v_format.png  used on input line 156.
@@ -1163,7 +1163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
-<risc-v_fsr.png, id=199, 678.1335pt x 62.634pt>
+<risc-v_fsr.png, id=200, 678.1335pt x 62.634pt>
 File: risc-v_fsr.png Graphic file (type png)
 <use risc-v_fsr.png>
 Package pdftex.def Info: risc-v_fsr.png  used on input line 172.
@@ -1196,18 +1196,18 @@ Overfull \hbox (3.43155pt too wide) in paragraph at lines 272--273
  []
 
 [7] [8]
-<infrastructure.png, id=283, 827.09pt x 430.60875pt>
+<infrastructure.png, id=284, 827.09pt x 430.60875pt>
 File: infrastructure.png Graphic file (type png)
 <use infrastructure.png>
 Package pdftex.def Info: infrastructure.png  used on input line 319.
 (pdftex.def)             Requested size: 330.83012pt x 172.24043pt.
-<onecycle.png, id=285, 420.6114pt x 233.4321pt>
+<onecycle.png, id=286, 420.6114pt x 233.4321pt>
 File: onecycle.png Graphic file (type png)
 <use onecycle.png>
 Package pdftex.def Info: onecycle.png  used on input line 331.
 (pdftex.def)             Requested size: 315.45778pt x 175.07364pt.
  [9 <./infrastructure.png> <./OneCycle.png>]
-<twocycle.png, id=296, 434.3427pt x 233.4321pt>
+<twocycle.png, id=297, 434.3427pt x 233.4321pt>
 File: twocycle.png Graphic file (type png)
 <use twocycle.png>
 Package pdftex.def Info: twocycle.png  used on input line 345.
@@ -1218,12 +1218,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 410--411
  []
 
 [11]
-<twoStage.png, id=351, 433.62pt x 233.4321pt>
+<twoStage.png, id=352, 433.62pt x 233.4321pt>
 File: twoStage.png Graphic file (type png)
 <use twoStage.png>
 Package pdftex.def Info: twoStage.png  used on input line 418.
 (pdftex.def)             Requested size: 390.2544pt x 210.08693pt.
-<predbtb.png, id=353, 606.265pt x 341.275pt>
+<predbtb.png, id=354, 606.265pt x 341.275pt>
 File: predbtb.png Graphic file (type png)
 <use predbtb.png>
 Package pdftex.def Info: predbtb.png  used on input line 429.
@@ -1242,7 +1242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 437--438
  []
 
 [13 <./predbtb.png>]
-<predbhb.png, id=380, 606.265pt x 341.275pt>
+<predbhb.png, id=381, 606.265pt x 341.275pt>
 File: predbhb.png Graphic file (type png)
 <use predbhb.png>
 Package pdftex.def Info: predbhb.png  used on input line 482.
@@ -1274,7 +1274,7 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 Here is how much of TeX's memory you used:
  28880 strings out of 483183
  546166 string characters out of 5966292
- 1204955 words of memory out of 5000000
+ 1204975 words of memory out of 5000000
  43298 multiletter control sequences out of 15000+600000
  541036 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1285,15 +1285,16 @@ Here is how much of TeX's memory you used:
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmtt8.pfb>
-Output written on report.pdf (16 pages, 571049 bytes).
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt8.pfb>
+Output written on report.pdf (16 pages, 581033 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 407 compressed objects within 5 object streams
+ 484 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
  159 named destinations out of 1000 (max. 500000)
  364 words of extra memory for PDF output out of 10000 (max. 10000000)
 

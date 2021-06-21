@@ -65,15 +65,15 @@
 
 \addbibresource{biblio.bib}
 
-\title{\textbf{RISC-V processors with Bluespec}}
+\title{\textbf{RISC-V processors with BSV}}
 
-\author{High Performance Processors and System\\ A.Y. 2020/2021\\\\\\\\\textbf{Riccardo Nannini}\\\\\\}
+\author{High Performance Processors and System\\ A.Y. 2020/2021\\\\\\\\\\\Large R\normalsize ICCARDO \Large N\normalsize ANNINI\\}
 
 \date{\parbox{\linewidth}{\centering%
-		\today\endgraf\bigskip\bigskip\bigskip\bigskip\bigskip
-		Tutors: Emanuele Del Sozzo, \endgraf\medskip
-		Davide Conficconi \endgraf\bigskip\bigskip
-		Professor: Marco Domenico Santambrogio 
+		\today\endgraf\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+		\large T\normalsize UTORS\endgraf\medskip \normalsize E\footnotesize MANUELE \normalsize D\footnotesize EL \normalsize S\footnotesize OZZO \endgraf\smallskip
+		\normalsize D\footnotesize AVIDE \normalsize C\footnotesize ONFICCONI \endgraf\bigskip\bigskip\bigskip
+		\large P\normalsize ROFESSOR\endgraf\medskip \normalsize M\footnotesize ARCO \normalsize D\footnotesize OMENICO \normalsize S\footnotesize ANTAMBROGIO 
 		}}
 \begin{document}
 
@@ -113,7 +113,7 @@ Everything I have produced within this project (code, scripts, this report itsel
 \subsection{What is RISC-V}
 Since the processor designs will be based on RISC-V, knowing this ISA is fundamental.
 
-RISC-V was born in 2010 at UC Berkley by the work of graduate students Andrew Waterman, Yunsup Lee and professors David Patterson, Krste Asanovic \cite{risc-v_original}, built on the experience gained from the 4 previous major RISC ISA design from UC Berkeley (thus justifying the ‘V’).
+Born in 2010 at UC Berkeley by the work of graduate students Andrew Waterman, Yunsup Lee and professors David Patterson, Krste Asanovic \cite{risc-v_original}, RISC-V was built with the experience gained from the four previous major RISC ISA design from UC Berkeley (thus justifying the ‘V’).
 
 As the name suggests, RISC-V belongs to the family of \textbf{RISC} ISAs. In particular, RISC instruction sets are characterized by \textit{small} and \textit{highly optimized} instructions that ease \textit{pipeline} implementation, along with a large number of \textit{general purpose registers}. 
 
@@ -158,7 +158,7 @@ Six basic instruction formats are present in the base version of the ISA as show
 	\label{riscv:format}
 \end{figure}
 
-It is worth noting a particular design choice made by the authors. Since, as they state, the \textit{decoding} of register specifiers is usually on the \textbf{critical path} in implementations, they decided to keep all register specifiers in the same position across every instruction type. This comes with the tradeoff of having some instructions with an immediate value that has to be split in two parts.
+It is worth underlining a particular design choice made by the authors. Since, as they state, the \textit{decoding} of register specifiers is usually on the \textbf{critical path} in implementations, they decided to keep all register specifiers in the same position across every instruction type. This comes with the tradeoff of having some instructions with an immediate value that has to be split in two parts.
 
 \textbf{R-Type} instructions are for operations with two source registers (\textit{rs1} and \textit{rs2}) while \textbf{R4-Type} format is for special three source register floating point instructions. Moreover, \textbf{I-Type} format is for operations between a source register (\textit{rs1}) and an 12-bit sign-extended immediate, while \textbf{B-Type} instructions are designed for conditional branches (where the branch type is specified in \textit{funct3}).
 The LUI (\textit{Load upper immediate}) operation, generally used to build 32-bit constants, is the typical instruction specified by the \textbf{L-Type}, meanwhile \textbf{J-Type} instructions encode a 25-bit target address as a PC-relative offset.
@@ -212,7 +212,7 @@ Based on a synthesizable subset of SystemVerilog, BSV can significantly improve 
 
 This section is devoted to the main features of BSV in order to give the reader a general overview of the language and understand its strength. The complete reference guide (also used for this quick introduction) can be found at \cite{bsv_guide}.
 \subsubsection{Modules and interfaces}
-In order to understand BSV, it is useful start with the notion of \textbf{modules} and \textbf{interfaces}, the core of the language. Modules and interfaces are what, in the end, is turned into actual hardware. 
+In order to understand BSV, it is useful to start with the notion of \textbf{modules} and \textbf{interfaces}, the core of the language. Modules and interfaces are what, in the end, is turned into actual hardware. 
 
 An interface describes what a module 'offers' to the outside. On the other hand, a module 'implements' its interface as it prefers.
 
@@ -234,7 +234,7 @@ module mkFifo( Fifo#(n) );
 endmodule
 \end{lstlisting}
 
-When it comes to modules, however, we need to distinguish between a module \textit{definition} and a module \textit{instantiation}. A module definition is like a class in object oriented programming while a module instantation can be considered as an object of said class.
+When it comes to modules, however, we need to distinguish between a module \textit{definition} and a module \textit{instantiation}. A module definition is like a class in object oriented programming while a module instantiation can be considered as an object of said class.
 
 A module consists of three things: 
 \begin{itemize}
@@ -271,7 +271,7 @@ String
 \end{lstlisting}
 or \textit{parametrized} types (either standard or user-defined)in the form of {\fontfamily{cmtt}\selectfont{\textbf{X\#}}(t\textsubscript{1},..., t\textsubscript{n})}
 \begin{lstlisting}[label={bsv:paramtype},caption={Parametrized types}]
-Typle2#(int, Bool)		//pair of items, an int and a Bool
+Tuple2#(int, Bool)		//pair of items, an int and a Bool
 List#(Bool)					  //list of booleans
 Vector#(n, int)				//vector of n integers
 Bit#(16)							//16-bit wide bit-vector
@@ -283,7 +283,7 @@ In \cref{bsv:paramtype} it is possible to observe that parametrized types utiliz
 
 It is worth mentioning also the type \textbf{Action} that denotes any expression that acts on the \textit{state} of the circuit, fundamental in order to produce useful hardware.
 \subsubsection{Rules}
-\textit{Rules} specity the internal behavior of modules. A rule may have a \textit{guard} (boolean expression) that indicates when the rule can execute (fire), and a \textit{body}, of type Action, that describes what the rule does.
+\textit{Rules} specify the internal behavior of modules. A rule may have a \textit{guard} (boolean expression) that indicates when the rule can execute (fire), and a \textit{body}, of type Action, that describes what the rule does.
 \begin{lstlisting}[label={bsv:paramtype},caption={Autoincrementing couter with a single rule}]
 module mkCounter(Empty);
 	Reg#(Bit#(8)) value <- mkReg(0);
@@ -347,7 +347,7 @@ In order to achieve this, an intermediate register ({\fontfamily{cmtt}\selectfon
 	\label{twocycle}
 \end{figure}
 
-\begin{lstlisting}[label={twocyclecode},caption={Two cycle processor simplified code}]
+\begin{lstlisting}[label={twocyclecode},caption={Two cycles processor simplified code}]
 typedef enum {
 	Fetch, Execute
 } State;
@@ -411,7 +411,7 @@ In the above-described designs, when the processor was in a particular state, th
 
 While the stage structure is similar to the two clock design (fetch/decode in one stage, execute/memory/writeback in the second), we need some form of \textbf{next instruction prediction} (the fetch stage has to fetch the instruction before the previous one has terminated) and a way to kill wrong path instructions in case of a \textbf{misprediction}.
 
-This can be achieved by using a  {\fontfamily{cmtt}\selectfont{FIFO}} queue as an intermediate register between the stages and, in case of a misprediction, clear said  {\fontfamily{cmtt}\selectfont{FIFO}} (as it contains a wrong-path instruction) and redirect the {\fontfamily{cmtt}\selectfont{pc}} with the correct address. This pc-overwriting action is possible due to  {\fontfamily{cmtt}\selectfont{EHR}} (\textit{Ephemeral History Register}), an hardware structure that allows to have multiple write with different 'priorities'.
+This can be achieved by using a  {\fontfamily{cmtt}\selectfont{FIFO}} queue as an intermediate register between the stages and, in case of a misprediction, clear said  {\fontfamily{cmtt}\selectfont{FIFO}} (as it contains a wrong-path instruction) and redirect the {\fontfamily{cmtt}\selectfont{pc}} with the correct address. This pc-overwriting action is possible due to  {\fontfamily{cmtt}\selectfont{EHR}} (\textit{Ephemeral History Register}), an hardware structure that allows to have multiple writes with different 'priorities'.
 
 \begin{figure}[h]
 	\centering
@@ -436,8 +436,8 @@ For the last design I have implemented a six stage pipelined processor, getting 
 
 This, however, creates the possibility of having data hazards. Since the execution will be in-order, the only hazard we should take care of are \textbf{RAW} (Read After Write); an instruction might read a register that would have been written by a previous instruction that has not committed yet.\\
 
-In this design I solved this type of conflict using \textbf{Scoreboard}. 
-Scoreboard is a data structure for \textit{centralized hazard management} that keeps track of the registers currently involved in the pipelined instructions. 
+In this design I solved this type of conflict using {\fontfamily{cmtt}\selectfont{scoreboard}}. 
+{\fontfamily{cmtt}\selectfont{Scoreboard}} is a data structure for \textit{centralized hazard management} that keeps track of the registers currently involved in the pipelined instructions. 
 
 Every instruction goes through the {\fontfamily{cmtt}\selectfont{scoreboard}}: if no conflict are found the instruction proceeds in the pipeline and the used registers are saved in the  {\fontfamily{cmtt}\selectfont{scoreboard}}; if a conflict is found, the instruction stalls.
 
@@ -488,7 +488,7 @@ The {\fontfamily{cmtt}\selectfont{BHT}} is accessed in the decode stage (we need
 
 As the last improvement to branch predictions I have implemented a \textbf{RAS}. The {\fontfamily{cmtt}\selectfont{Return Address Stack}} is a predictor aimed at improving \textit{Jump register} instructions ({\fontfamily{cmtt}\selectfont{JALR}} and {\fontfamily{cmtt}\selectfont{JAL}}). According to the RISC-V specification, this two types of unconditional jumps save the address of the instruction following the jump ({\fontfamily{cmtt}\selectfont{pc+4}}) in register x1 ({\fontfamily{cmtt}\selectfont{JAL}}) or in  register \textit{rd} specified in the instruction ({\fontfamily{cmtt}\selectfont{JALR}}). Most {\fontfamily{cmtt}\selectfont{JAL}} and {\fontfamily{cmtt}\selectfont{JALR}} instructions found in programs are used to call or return from functions.
 
-The {\fontfamily{cmtt}\selectfont{RAS}}, implemented along with {\fontfamily{cmtt}\selectfont{BHT}} in the decode stage, works is by maintain a stack, pushing return addresses when a jump calling a routine is found and popping said addresses when another jump instruction returning from a function is detected. Depending on the frequency of jumps in a program, this predictor might slightly improve performances. 
+The {\fontfamily{cmtt}\selectfont{RAS}}, implemented along with {\fontfamily{cmtt}\selectfont{BHT}} in the decode stage, works by maintaining a stack where return addresses are pushed when a jump calling a routine is found and popping said addresses when another jump instruction returning from a function is detected. Depending on the frequency of jumps in a program, this predictor can slightly improve performances. 
 
 
 
